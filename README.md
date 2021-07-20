@@ -209,10 +209,15 @@ Nói như vậy cũng không có nghĩa rằng bạn không thể lập trình �
 Về cơ bản thì 1 Scheduler sẽ định nghĩa ra thread để chạy 1 khối lượng công việc. RxJava cung cấp những lựa chọn Scheduler như sau:
 
    immediate(): Tạo ra và trả về 1 Scheduler để thực thi công việc trên thread hiện tại.
+   
    trampoline(): Tạo ra và trả về 1 Scheduler để sắp xếp 1 hàng chờ cho công việc trên thread hiện tại để thực thi khi công việc hiện tại kết thúc.
+   
    newThread(): Tạo ra và trả về 1 Scheduler để tạo ra 1 thread mới cho mỗi đơn vị công việc.
+   
    computation(): Tạo ra và trả về 1 Scheduler với mục đích xử lý các công việc tính toán, được hỗ trợ bởi 1 thread pool giới hạn với size bằng với số CPU hiện có.
+   
    io(): Tạo ra và trả về 1 Scheduler với mục đích xử lý các công việc không mang nặng tính chất tính toán, được hỗ trợ bởi 1 thread pool không giới hạn có thể mở rộng khi cần.          Có thể được dùng để thực thi các tiến trình bất đồng bộ không gây ảnh hưởng lớn tới CPU.
+   
    
 Vị trí gọi subscribeOn() không quan trọng
 
